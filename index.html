@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .item{
+            position:relative;
+        }
+
+        span{
+            font-weight:100;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .hide{
+            display:none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">
+            <div class="itemHeader">
+                <h2>What is ABC? <span class="spa">Click Me</span></h2>
+            </div>
+            <div class="itemContent hide">
+                <p>ABC are first three letters of English language.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="itemHeader">
+                <h2>What is DEF? <span class="spa">Click Me</span></h2>
+                
+            </div>
+            <div class="itemContent hide">
+                <p>DEF are second three letters of English language.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="itemHeader">
+                <h2>What is GHI? <span class="spa">Click Me</span></h2>
+            </div>
+            <div class="itemContent hide">
+                <p>GHI are third three letters of English language.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.spa').forEach((sp) => {
+            sp.addEventListener('click', function (e) {
+                console.log(e.target.parentElement.parentElement.nextElementSibling)
+                e.target.parentElement.parentElement.nextElementSibling.classList.toggle('hide')
+                
+            })
+        })
+    </script>
+</body>
+</html>
